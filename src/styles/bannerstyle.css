@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0px 0px 10px;
+}
+
+.banner {
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Tilt Neon', cursive;
+}
