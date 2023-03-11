@@ -15,6 +15,7 @@ const Lector = () => {
         style={{ width: "100%" }}
         videoStyle={{ backgroundColor: "#000" }}
       />
+
       <p>{data}</p>
     </div>
   );
