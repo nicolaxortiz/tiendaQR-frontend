@@ -1,0 +1,93 @@
+.container-cart{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 55;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.2s ease-in;
+}
+
+.container-cart-hide{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top:0;
+    right: 0;
+    display: none;
+    opacity: 0;
+    z-index: 55;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.2s ease-in;
+}
+
+.mycart{
+    font-size: 27px;
+    font-family: 'Tilt Neon', cursive;
+}
+
+.item-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(206, 206, 206);
+    padding: 10px 0;
+    border-bottom: solid 1.5px #fff;
+}
+
+.img-cart img{
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 18%;
+}
+
+.img-cart{
+    width: fit-content;
+}
+
+.txt-cart {
+    width: 200%;
+    padding: 0 20px;
+}
+
+.title-cart{
+    font-size: 20px;
+    font-family: 'Tilt Neon', cursive;
+}
+
+.btn-confirmcart {
+    background-color: #EDB544;
+    width: 30%;
+    height: fit-content;
+    padding: 7px 0px 7px 0px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-family: 'Tilt Neon', cursive;
+    font-size: 18px;
+    justify-self: flex-end;
+    margin: 0 auto;
+}
+
+.flex-box{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    
+}
+
+.total-cart{
+    font-family: 'Tilt Neon', cursive;
+    margin-left: 10%;
+}
+
+.delete-btn-cart{
+    width: 20px;
+    margin: 0 10px;
+}

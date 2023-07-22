@@ -1,0 +1,30 @@
+.footer{
+    background-color: #c4c4c4;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.txt-footer{
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Tilt Neon', cursive;
+    color: #353535;
+}
+
+.social-footer{
+    display: flex;
+    justify-content: center
+}
+
+.icon-media-footer{
+    width: 25px;
+    margin: 10px 15px 0px 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
