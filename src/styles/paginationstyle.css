@@ -1,0 +1,29 @@
+.pag-box{
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    user-select: none
+}
+
+.selected-pag{
+    padding: 5px 7px 5px 7px;
+    border:#000000 solid 2px;
+    background-color: #e6e6e6;
+}
+
+.pag-box div {
+    padding: 5px 7px 5px 7px;
+    border:#000000 solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.uns-pag{
+    border:#aaaaaa solid 2px !important;
+    color: #aaaaaa;
+    cursor: default !important;
+}

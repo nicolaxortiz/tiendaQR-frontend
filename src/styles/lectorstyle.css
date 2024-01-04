@@ -3,9 +3,38 @@
     align-items: center;
     flex-direction: column;
     z-index: 1;
+    margin-bottom: 30px;
 }
 
 .img-main{
     width: 80%;
     margin-top: 30px;
+}
+
+.lector-qr-hide{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top:0;
+    right: 0;
+    display: none;
+    opacity: 0;
+    z-index: 55;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.2s ease-in;
+}
+
+.lector-qr{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 100;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 0.2s ease-in;
 }

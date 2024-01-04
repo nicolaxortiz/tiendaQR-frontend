@@ -1,0 +1,78 @@
+.box-purchase{
+    background-color: rgb(235, 235, 235);
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.product-purchase{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ffffff;
+    padding-left: 20px;
+}
+
+.date-purchase{
+    font-family:'Tilt Neon', cursive;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px 16px;
+}
+
+.img-purchase{
+    width: 60%;
+}
+
+.img-purchase img{
+    width: 70%;
+    border-radius: 20px;
+    border: 2px solid #acacac;
+}
+
+.info-purchase{
+    width: 80%;
+    text-align: left;
+    margin-left: 20px;
+    font-family:'Tilt Neon', cursive;
+}
+
+.cancel-purchase{
+    width: 60%;
+    border-radius: 10px;
+    font-family: 'Tilt Neon', cursive;
+    font-size: 18px;
+    margin: 0px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    color: #000000;
+}
+
+.received-purchase{
+    background-color: #F29E7D;
+    width: 60%;
+    border-radius: 10px;
+    font-family: 'Tilt Neon', cursive;
+    font-size: 18px;
+    margin: 8px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    color: #000000;
+}
+
+.row-information{
+    display: flex;
+    justify-content: space-between;
+}
+
+.low-txt{
+    color: #636363;
+}

@@ -5,7 +5,7 @@
     position: absolute;
     top:0;
     right: 0;
-    z-index: 55;
+    z-index: 100;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     transition: all 0.2s ease-in;
@@ -53,11 +53,13 @@
 .txt-cart {
     width: 200%;
     padding: 0 20px;
+    color: #3a3a3a;
 }
 
 .title-cart{
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Tilt Neon', cursive;
+    color: #000000;
 }
 
 .btn-confirmcart {
@@ -79,12 +81,11 @@
     align-items: center;
     text-align: center;
     margin-bottom: 15px;
-    
 }
 
 .total-cart{
     font-family: 'Tilt Neon', cursive;
-    margin-left: 10%;
+    margin-left: 7%;
 }
 
 .delete-btn-cart{

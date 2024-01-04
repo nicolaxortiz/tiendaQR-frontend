@@ -6,7 +6,7 @@ import Escanea from "../assets/escanea.png";
 import "../styles/lectorstyle.css";
 
 const Lector = () => {
-  const { setProduct, setModal, userInformation, setUserInformation } =
+  const { setProduct, setModal, modalQR, setModalQR } =
     React.useContext(UseContext);
 
   let data = "";
@@ -24,7 +24,7 @@ const Lector = () => {
   };
 
   return (
-    <>
+    <div className={modalQR ? "lector-qr" : "lector-qr-hide"}>
       <img src={Escanea} alt="main-img" className="img-main" />
       <div className="container-qr">
         <QrReader
@@ -58,7 +58,7 @@ const Lector = () => {
           className="QR"
         />
       </div>
-    </>
+    </div>
   );
 };
 

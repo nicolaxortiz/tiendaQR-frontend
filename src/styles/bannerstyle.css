@@ -28,6 +28,16 @@
     flex-direction: row;
 }
 
+.shopping-cart img{
+    width: 30px; 
+    height: 100%;
+    margin-left: 7px;
+}
+
+.user-img{
+    border-radius: 50%;
+}
+
 .quantity{
     background-color: #EDB544;
     height: fit-content;
@@ -39,9 +49,4 @@
     font-weight: bold;
 }
 
-.user-img{
-    width: 30px; 
-    height: 100%;
-    margin-right: 5px;
-    border-radius: 50%;
-}
+

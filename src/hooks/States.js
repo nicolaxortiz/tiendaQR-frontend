@@ -8,7 +8,9 @@ const States = () => {
   const [cartId, setCartId] = React.useState();
   const [modalUser, setModalUser] = React.useState(false);
   const [modalUserInfo, setModalUserInfo] = React.useState(false);
+  const [modalQR, setModalQR] = React.useState(false);
   const [userInformation, setUserInformation] = React.useState({});
+  const [purchases, setPurchases] = React.useState([]);
 
   return {
     product,
@@ -25,8 +27,12 @@ const States = () => {
     setModalUser,
     modalUserInfo,
     setModalUserInfo,
+    modalQR,
+    setModalQR,
     userInformation,
     setUserInformation,
+    purchases,
+    setPurchases,
   };
 };
 

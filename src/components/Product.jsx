@@ -3,7 +3,7 @@ import { UseContext } from "../context/UseContext";
 import ArrowPrev from "../assets/arrow-prev-svgrepo-com.svg";
 import ArrowNext from "../assets/arrow-next-svgrepo-com.svg";
 import closeBtn from "../assets/close-svgrepo-com-2.svg";
-import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/product.css";
 
 const Product = () => {
@@ -18,8 +18,11 @@ const Product = () => {
     modalUser,
     setModalUser,
     modalUserInfo,
-    userInformation,
+    modalQR,
+    setModalQR,
   } = React.useContext(UseContext);
+
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   const [quantity, setQuantity] = React.useState(1);
   const [size, setSize] = React.useState("");
@@ -61,38 +64,45 @@ const Product = () => {
   };
 
   const agregarCarrito = () => {
-    const newCart = [...cart];
+    if (isAuthenticated) {
+      const newCart = [...cart];
 
-    newCart.push({
-      id: product?._id,
-      title: product?.title,
-      price: product?.price * quantity,
-      image: product?.image[0],
-      quantity: quantity,
-      size: size,
-    });
+      newCart.push({
+        id: product?._id,
+        title: product?.title,
+        price: product?.price * quantity,
+        image: product?.image[0],
+        quantity: quantity,
+        size: size,
+      });
 
-    setTimeout(() => {
-      setCart(newCart);
+      setTimeout(() => {
+        setCart(newCart);
 
-      setQuantity(1);
-      setSize("");
-      setModal(false);
-      setLoading(false);
-    }, 4000);
+        setQuantity(1);
+        setSize("");
+        setModal(false);
+        setModalQR(false);
+        setLoading(false);
+      }, 4000);
+    } else {
+      loginWithRedirect();
+    }
   };
 
   return (
     <>
       <div
         className={
-          modal || modalCart || modalUser || modalUserInfo
+          modal || modalCart || modalUser || modalUserInfo || modalQR
             ? "background-black"
             : "background-black-hide"
         }
         onClick={() => {
           setModalCart(false);
           setModalUser(false);
+          setModal(false);
+          setModalQR(false);
         }}
       ></div>
       <div className={modal ? "box-container" : "box-container-hide"}>
@@ -118,9 +128,9 @@ const Product = () => {
           ${(product?.price * quantity).toLocaleString()}
         </div>
 
-        <div className="quantity-pro">Descripción:</div>
+        <div className="quantity-pro">Details:</div>
         <div className="desc-pro">{product?.detail}</div>
-        <div className="quantity-pro">Cantidad:</div>
+        <div className="quantity-pro">Quantity:</div>
         <div className="quantity-box">
           <div
             className="quantity-controler"
@@ -144,7 +154,7 @@ const Product = () => {
           </div>
         </div>
 
-        <div className="quantity-pro">Tallas:</div>
+        <div className="quantity-pro">Size:</div>
         <div className="size-box">
           {product?.size.map((element) => {
             return (
@@ -165,7 +175,7 @@ const Product = () => {
             agregarCarrito();
           }}
         >
-          {loading ? <div className="spinner"></div> : "Comprar"}
+          {loading ? <div className="spinner"></div> : "Add to cart"}
         </button>
       </div>
     </>

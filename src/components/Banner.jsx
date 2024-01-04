@@ -3,6 +3,7 @@ import "../styles/bannerstyle.css";
 import cartSVG from "../assets/shop-svgrepo-com.svg";
 import logo from "../assets/logo-android-google-2-svgrepo-com.svg";
 import userLogo from "../assets/user-svgrepo-com.svg";
+import qrLogo from "../assets/qr-scan-svgrepo-com.svg";
 import axios from "axios";
 import { UseContext } from "../context/UseContext";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -18,20 +19,32 @@ const Banner = () => {
     setModalUser,
     setModalUserInfo,
     setUserInformation,
+    modalQR,
+    setModalQR,
   } = React.useContext(UseContext);
 
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
   const openCart = () => {
     setModalCart(!modalCart);
-    if (modalUser) {
+    if (modalUser || modalQR) {
       setModalUser(false);
+      setModalQR(false);
     }
   };
 
   const openUserMenu = () => {
     setModalUser(!modalUser);
-    if (modalCart) {
+    if (modalCart || modalQR) {
+      setModalCart(false);
+      setModalQR(false);
+    }
+  };
+
+  const openQR = () => {
+    setModalQR(!modalQR);
+    if (modalUser || modalCart) {
+      setModalUser(false);
       setModalCart(false);
     }
   };
@@ -88,7 +101,7 @@ const Banner = () => {
     <>
       <div className="container">
         <div className="banner">
-          Tienda QR
+          Shoes Store
           <img
             src={logo}
             width="30px"
@@ -117,10 +130,20 @@ const Banner = () => {
           )}
 
           <img
+            src={qrLogo}
+            alg="qr-icon"
+            width="30px"
+            height="100%"
+            onClick={() => {
+              openQR();
+            }}
+          />
+
+          <img
             src={cartSVG}
             width="30px"
             height="100%"
-            alt="carrito"
+            alt="shoping-cart"
             onClick={() => {
               openCart();
             }}

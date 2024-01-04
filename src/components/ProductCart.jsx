@@ -19,8 +19,8 @@ const ProductCart = ({ item }) => {
         </div>
         <div className="txt-cart">
           <div className="title-cart">{item?.title}</div>
-          <div className="price-cart">Cantidad: {item?.quantity}</div>
-          <div className="price-cart"> Talla: {item?.size}</div>
+          <div className="price-cart">Quantity: {item?.quantity}</div>
+          <div className="price-cart"> Size: {item?.size}</div>
           <div className="price-cart">${item?.price.toLocaleString()}</div>
         </div>
         <div className="delete-cart">

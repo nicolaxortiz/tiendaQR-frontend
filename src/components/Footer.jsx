@@ -15,7 +15,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="txt-footer">
-        Desarrollado por: Nicolas Santiago Ortiz Pedraza
+        Developed by: Nicolas Santiago Ortiz Pedraza
       </div>
       <div className="social-footer">
         <img
