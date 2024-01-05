@@ -7,20 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/product.css";
 
 const Product = () => {
-  const {
-    product,
-    modal,
-    setModal,
-    cart,
-    setCart,
-    modalCart,
-    setModalCart,
-    modalUser,
-    setModalUser,
-    modalUserInfo,
-    modalQR,
-    setModalQR,
-  } = React.useContext(UseContext);
+  const { product, modal, setModal, cart, setCart, setModalQR } =
+    React.useContext(UseContext);
 
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
@@ -92,19 +80,6 @@ const Product = () => {
 
   return (
     <>
-      <div
-        className={
-          modal || modalCart || modalUser || modalUserInfo || modalQR
-            ? "background-black"
-            : "background-black-hide"
-        }
-        onClick={() => {
-          setModalCart(false);
-          setModalUser(false);
-          setModal(false);
-          setModalQR(false);
-        }}
-      ></div>
       <div className={modal ? "box-container" : "box-container-hide"}>
         <div
           className="btn-close"
@@ -161,6 +136,7 @@ const Product = () => {
               <div
                 className={size === element ? "selected-size" : "each-size"}
                 onClick={() => handleSize(element)}
+                key={element}
               >
                 {element}
               </div>

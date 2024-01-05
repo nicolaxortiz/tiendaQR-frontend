@@ -14,8 +14,6 @@ const Pagination = ({ setPage, page, productsData, count }) => {
 
   const numPages = Math.ceil(count / 6);
 
-  console.log(numPages);
-
   return (
     <>
       <div className="pag-box">

@@ -25,6 +25,19 @@ const ProductList = () => {
     getProducts();
   }, [page]);
 
+  const products = [];
+  let missingProductos = 6 - productsData.length;
+
+  for (let i = 0; i < missingProductos; i++) {
+    products.push(
+      <div className="productBox">
+        <img src="https://i.imgur.com/b2yEZaT.png" />
+        <div>Coming soon!</div>
+        <div className="price"></div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="product-list">
@@ -46,13 +59,7 @@ const ProductList = () => {
             </div>
           );
         })}
-        {productsData.length % 2 != 0 && (
-          <div className="productBox">
-            <img src="" />
-            <div></div>
-            <div className="price"></div>
-          </div>
-        )}
+        {products}
       </div>
 
       <Pagination

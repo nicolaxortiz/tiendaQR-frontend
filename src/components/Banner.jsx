@@ -148,7 +148,7 @@ const Banner = () => {
               openCart();
             }}
           />
-          <div className="quantity">{cart.length}</div>
+          <div className="quantity">{cart?.length}</div>
         </div>
       </div>
     </>

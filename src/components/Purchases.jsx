@@ -8,6 +8,8 @@ function Purchases() {
   const { setUserInformation, setPurchases, purchases } =
     React.useContext(UseContext);
   const { user, isAuthenticated } = useAuth0();
+  const [loading, setLoading] = React.useState(false);
+
   let purchasesArray = [];
 
   React.useEffect(() => {
@@ -34,7 +36,7 @@ function Purchases() {
             user_id: id,
           }
         );
-        console.log(response.data.purchase);
+        // console.log(response.data.purchase);
         setPurchases(response.data.purchase);
       } catch (error) {
         console.log(error);
@@ -42,12 +44,18 @@ function Purchases() {
     }
 
     fetchUser();
-  }, [user]);
+  }, [user, loading]);
 
   return (
     <>
       {purchases?.map((item) => {
-        return <ItemPurchase key={item._id} purchase={item} />;
+        return (
+          <ItemPurchase
+            key={item._id}
+            purchase={item}
+            setLoading={setLoading}
+          />
+        );
       })}
     </>
   );

@@ -27,36 +27,38 @@ const Lector = () => {
     <div className={modalQR ? "lector-qr" : "lector-qr-hide"}>
       <img src={Escanea} alt="main-img" className="img-main" />
       <div className="container-qr">
-        <QrReader
-          onResult={(result, error) => {
-            if (!!result) {
-              data = result?.text;
-              Modal();
-            }
-          }}
-          constraints={{
-            facingMode: "environment",
-          }}
-          containerStyle={{
-            width: "80%",
-            display: "flex",
-            justifyContent: "center",
-            padding: "10px",
-            zIndex: 0,
-          }}
-          videoContainerStyle={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            borderColor: "#EDB544",
-            borderRadius: "10px",
-            borderWidth: "5px",
-            borderStyle: "solid",
-            zIndex: 0,
-          }}
-          videoStyle={{ zIndex: 0 }}
-          className="QR"
-        />
+        {modalQR && (
+          <QrReader
+            onResult={(result, error) => {
+              if (!!result) {
+                data = result?.text;
+                Modal();
+              }
+            }}
+            constraints={{
+              facingMode: "environment",
+            }}
+            containerStyle={{
+              width: "80%",
+              display: "flex",
+              justifyContent: "center",
+              padding: "10px",
+              zIndex: 0,
+            }}
+            videoContainerStyle={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              borderColor: "#EDB544",
+              borderRadius: "10px",
+              borderWidth: "5px",
+              borderStyle: "solid",
+              zIndex: 0,
+            }}
+            videoStyle={{ zIndex: 0 }}
+            className="QR"
+          />
+        )}
       </div>
     </div>
   );

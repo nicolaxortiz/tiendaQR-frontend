@@ -6,12 +6,13 @@ import "../styles/userinfostyles.css";
 import { useNavigate } from "react-router-dom";
 
 function UserInfo() {
-  const { modalUser } = React.useContext(UseContext);
+  const { modalUser, setModalUser } = React.useContext(UseContext);
   const { user, logout } = useAuth0();
   const navigate = useNavigate();
 
   const handleNavigation = () => {
     navigate("my-purchases");
+    setModalUser(false);
   };
 
   return (

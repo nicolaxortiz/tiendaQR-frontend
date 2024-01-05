@@ -9,8 +9,10 @@ const States = () => {
   const [modalUser, setModalUser] = React.useState(false);
   const [modalUserInfo, setModalUserInfo] = React.useState(false);
   const [modalQR, setModalQR] = React.useState(false);
+  const [modalAlert, setModalAlert] = React.useState(false);
   const [userInformation, setUserInformation] = React.useState({});
   const [purchases, setPurchases] = React.useState([]);
+  const [confirmPurchase, setConfirmPurchase] = React.useState(false);
 
   return {
     product,
@@ -29,10 +31,14 @@ const States = () => {
     setModalUserInfo,
     modalQR,
     setModalQR,
+    modalAlert,
+    setModalAlert,
     userInformation,
     setUserInformation,
     purchases,
     setPurchases,
+    confirmPurchase,
+    setConfirmPurchase,
   };
 };
 
